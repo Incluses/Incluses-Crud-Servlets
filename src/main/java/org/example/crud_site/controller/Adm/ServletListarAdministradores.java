@@ -1,5 +1,6 @@
 package org.example.crud_site.controller.Adm;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @WebServlet("/listarAdm")
 public class ServletListarAdministradores {
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         AdmDAO admDAO = new AdmDAO();
         List<Adm> adms = admDAO.listarAdms();
         req.setAttribute("listarAdm", adms);

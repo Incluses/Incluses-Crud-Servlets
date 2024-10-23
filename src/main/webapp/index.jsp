@@ -24,9 +24,16 @@
   </div>
   <hr>
   <h2>Login administrador</h2>
-  <form>
+  <form action="login" method="post">
     <label for="usuario">Usuário:</label>
     <input type="text" id="usuario" placeholder="Ex: avnadmin">
+    <%
+        // Captura o valor enviado pelo formulário
+        String usuario = request.getParameter("usuario");
+
+        // Define o valor como um atributo da requisição
+        request.setAttribute("usuarioAtributo", usuario);
+    %>
     <label for="senha">Digite a senha:</label>
     <div class="senha-container">
       <input type="password" id="senha" placeholder="Ex: ********">
